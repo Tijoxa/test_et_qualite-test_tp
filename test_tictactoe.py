@@ -1,4 +1,5 @@
 import pytest
+import mock
 
 import TicTacToe_2016 as ttt
 
@@ -13,3 +14,10 @@ class TestZone:
         assert b == [[" ", " ", " "],
                      [" ", " ", " "],
              [" ", " ", " "]]
+
+    def test_sym():
+        with mock.patch('builtins.input', return_value="X"):
+            assert ttt.sym() == 'X', 'O'
+
+        with mock.patch('builtins.input', return_value='O'):
+            assert ttt.sym() == 'O', 'X'
