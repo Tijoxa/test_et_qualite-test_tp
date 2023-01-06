@@ -1,5 +1,3 @@
-
-
 import pytest
 
 import TicTacToe_2016 as ttt
